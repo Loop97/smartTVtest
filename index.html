@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alphabet Rotator</title>
   
-  <!-- Reload the page after 26 letters × 10 s = 260 s -->
-  <meta http-equiv="refresh" content="260">
+  <!-- Reload the page after 26 letters × 3 s = 78 s -->
+  <meta http-equiv="refresh" content="100">
 
   <style>
     /* full-screen black background with white, giant letter */
@@ -38,7 +38,7 @@
           el.textContent = letters[idx];
         }
         // else: do nothing — the meta-refresh will kick in
-      }, 10_000); // 10 000 ms = 10 s
+      }, 3000); // 3 s
     })();
   </script>
 </body>
