@@ -1,1 +1,45 @@
-<h1>HELLO!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alphabet Rotator</title>
+  
+  <!-- Reload the page after 26 letters × 10 s = 260 s -->
+  <meta http-equiv="refresh" content="260">
+
+  <style>
+    /* full-screen black background with white, giant letter */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      color: #fff;
+      font-family: sans-serif;
+      font-size: 10rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="letter">A</div>
+
+  <script>
+    (function() {
+      const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+      let idx = 0;
+      const el = document.getElementById('letter');
+      
+      setInterval(() => {
+        idx++;
+        if (idx < letters.length) {
+          el.textContent = letters[idx];
+        }
+        // else: do nothing — the meta-refresh will kick in
+      }, 10_000); // 10 000 ms = 10 s
+    })();
+  </script>
+</body>
+</html>
